@@ -106,7 +106,8 @@ public void paint(Graphics g) {
      	pipethread[currentthreads].start();
      	score ++;
      }
-     g.drawString("Score: " +score+"", 50, 50);
+     if (score >=0)
+         g.drawString("Score: " +score+"", 50, 50);
      	
      for(int index =0; index <currentthreads; index ++){
        if(((height < pipeob[index].getpipey()+730)||(height > pipeob[index].getpipey()+870 ))&&((pipeob[index].getpipex() < 100)&&(pipeob[index].getpipex() + 72 > 100))||
@@ -122,9 +123,9 @@ public void paint(Graphics g) {
     counter ++;
     counter--;
     }
-    do{
+    //do{
     	repaint(); 
-    }while(replay = true);	   
+   // }while(replay = true);
    }
 //============================================================================
  //new Thread(new Runnable() {
