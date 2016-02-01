@@ -66,7 +66,7 @@ import javax.swing.JPanel;
  public void init(JFrame gui){
     
     Color darkgreen = new Color(14, 74, 3);
-//-------------buttoons
+//-------------buttons
      
     
     JPanel pane1 = new JPanel(new GridBagLayout());
