@@ -26,26 +26,27 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 public class Painter extends JFrame implements KeyListener{
 
 	JFrame gui = new JFrame();
 
 	Pipes[] pipeob = new Pipes[5000];
-	
+
 	Thread[] pipethread = new Thread[5000];
-	
+
 	Bird bird = new Bird();
 	Thread birdthread = new Thread(bird);
-	
+
 	Boolean firstrun = true;
 	Boolean replay = true;
-	
+
 	int currentthreads = 0;
 	int height = 200;
 	int score = -2;
-	
+
 	Font fotn= new Font("Comic Sans", Font.BOLD, 20);
-	
+
 	Image Backgroundbottom = new ImageIcon("resources/BackgroundBottom.png").getImage();
 	Image Backgroundtop = new ImageIcon("resources/BackgroundTop.png").getImage();
 	Image Bird= new ImageIcon("resources/Bird.png").getImage();
@@ -76,7 +77,7 @@ public class Painter extends JFrame implements KeyListener{
 		pane1.setBackground(Color.white);
 
 		this.add(pane1);
-		
+
 		pipethread[currentthreads].start();
 		birdthread.start();
 	}
@@ -129,7 +130,6 @@ public class Painter extends JFrame implements KeyListener{
 
 	public void keyTyped(KeyEvent ke){}
 
-
 	public void keyPressed(KeyEvent ke){
 		if(ke.getKeyCode() == KeyEvent.VK_SPACE){
 			bird.setTime(0, height);
@@ -137,5 +137,5 @@ public class Painter extends JFrame implements KeyListener{
 	}
 
 	public void keyReleased(KeyEvent ke){}
-	
-}//end class	
+
+}
