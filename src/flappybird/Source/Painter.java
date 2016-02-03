@@ -76,6 +76,9 @@ public class Painter extends JFrame implements KeyListener{
 		pane1.setBackground(Color.white);
 
 		this.add(pane1);
+		
+		pipethread[currentthreads].start();
+		birdthread.start();
 	}
 
 	public void paint(Graphics g) {
@@ -86,12 +89,6 @@ public class Painter extends JFrame implements KeyListener{
 
 		g.drawImage(Backgroundtop, 0, 0, 450, 644, null); 
 		g.drawImage(Bird, 100, height, 40, 30, null);
-
-		if(firstrun == true){    //initiate threads
-			pipethread[currentthreads].start();
-			birdthread.start();
-			firstrun = false;
-		}
 
 		for(int index = 0; index <= currentthreads; index++){
 			g.drawImage(Pipes, pipeob[index].getpipex(), pipeob[index].getpipey(), null);	
